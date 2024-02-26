@@ -1,0 +1,31 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: var(--space-m);
+
+    &__group{
+        flex: 1;
+    }
+
+    &__input{
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        padding: var(--space-xs) var(--space-s);
+        border: var(--border);
+        border-radius: var(--border-radius);
+        transition: box-shadow 250ms;
+    
+        &--invalid{
+            border-color: var(--color-primary);
+        }
+    }
+
+    &__actions{
+        display: flex;
+        
+    }
+
+}
+
