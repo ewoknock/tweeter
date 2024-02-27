@@ -28,3 +28,17 @@
 
 }
 
+.tweet{
+    width: 100%;
+    border: none;
+    padding: 0 var(--space-s);
+
+    &:focus{
+        outline: none;
+    }
+}
+
+.tweet-post{
+    display: flex;
+    justify-content: flex-end;
+}
