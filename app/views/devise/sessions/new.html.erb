@@ -2,13 +2,13 @@
 
   <h2>Log in to Tweeter</h2>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form" }) do |f| %>
-    <div class="form__group">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form__input" %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "login" }) do |f| %>
+    <div class="login__group">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "login__input" %>
     </div>
 
-    <div class="form__group">
-      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "form__input" %>
+    <div class="login__group">
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "login__input" %>
     </div>
 
     <div class="actions">

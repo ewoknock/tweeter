@@ -13,6 +13,23 @@
         max-width: 60rem;
     }
 
+    &__group{
+        flex: 1;
+    }
+
+    &__input{
+        display: block;
+        width: 100%;
+        padding: var(--space-xs) var(--space-s);
+        border: var(--border);
+        border-radius: var(--border-radius);
+        transition: box-shadow 250ms;
+    
+        &--invalid{
+            border-color: var(--color-primary);
+        }
+    }
+
     &__actions{
         display: flex;
         max-width: 20rem;
@@ -43,7 +60,6 @@
 
 .login .btn{
     width: 100%;
-    border-radius: 3rem;
     background-color: var(--color-primary-rotate);
 }
 
