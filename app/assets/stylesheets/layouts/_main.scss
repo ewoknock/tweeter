@@ -3,6 +3,7 @@ main{
     grid-template-columns: repeat(3, 1fr);
     margin: auto;
     padding: var(--space-m);
+    gap: var(--space-s);
     height: 100vh;
 }
 
@@ -14,6 +15,7 @@ main{
     gap: var(--space-s);
     font-size: var(--font-size-xl);
     font-weight: 500;
+    padding: 0 var(--space-s);
 }
 
 .sidenav img{
