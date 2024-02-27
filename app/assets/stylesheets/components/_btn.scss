@@ -69,16 +69,4 @@
             color: var(--color-white);
         }
     }
-
-    &--link{
-        background: none!important;
-        border: none;
-        padding: 0!important;
-        /*optional*/
-        font-family: arial, sans-serif;
-        /*input has OS specific font-family*/
-        color: var(--color-primary);
-        text-decoration: none;
-        cursor: pointer;
-    }
 }
