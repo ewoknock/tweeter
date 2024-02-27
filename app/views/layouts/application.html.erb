@@ -11,6 +11,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% if user_signed_in? %>
+      <main>
+        <%= render "shared/sidenav" %>
+        <%= yield %>
+      </main>
+    <% else %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>
