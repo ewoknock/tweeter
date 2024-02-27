@@ -30,6 +30,11 @@ main{
     filter: invert(73%) sepia(45%) saturate(6063%) hue-rotate(176deg) brightness(101%) contrast(91%);
 }
 
+.sidebar-header,
+.sidebar-link{
+    padding-left: var(--space-s);
+}
+
 .sidebar-link{
     display: flex;
     align-items: center;
