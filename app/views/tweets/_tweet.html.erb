@@ -1,10 +1,6 @@
-<%= turbo_frame_tag dom_id(tweet) do %>
+<%= turbo_frame_tag dom_id(tweet_presenter.tweet) do %>
     <div class="tweet">
-        <% if (Time.zone.now - tweet.created_at) > 1.day %>
-            <p>@<%= tweet.user.email %> &#183; <%= tweet.created_at.strftime("%b %-d") %></p>
-        <% else %>
-            <p>@<%= tweet.user.email %> &#183; <%= time_ago_in_words(tweet.created_at) %></p>
-        <% end %>
-        <p><%= tweet.body %></p>
+        <p>@<%= tweet_presenter.user.email %> &#183; <%= tweet_presenter.created_at %></p>
+        <p><%= tweet_presenter.body %></p>
     </div>
 <% end %>

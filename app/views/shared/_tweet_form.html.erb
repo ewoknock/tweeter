@@ -1,0 +1,6 @@
+<%= form_with model: Tweet.new, url: tweets_path do |f| %>
+    <%= f.text_area :body, placeholder: "What is happening?!", class: "tweet-form" %>
+    <div class="tweet-post">
+        <%= f.submit  class: "btn btn--primary" %>
+    </div>
+<% end %>
