@@ -1,23 +1,37 @@
 <section class="sidenav">
-    <div class="sidebar-header">
-        <img src=<%= asset_path("twitter.svg") %> alt="Twitter Icon">
+    <div class="sidenav-header">
+        <%= link_to root_path do %>
+            <div class="header-image">
+                <img src=<%= asset_path("twitter-color-icon.svg") %> alt="Twitter Icon">
+            </div>
+        <% end %>
     </div>
-    <div class="sidebar-link">
-        <img src=<%= asset_path("home-outline.svg") %> alt="Home Icon">
-        <div class="sidebar-text home">Home</div>    
-    </div>
-    <div class="sidebar-link">
-        <img src=<%= asset_path("bell-outline.svg") %> alt="Notification Icon">
-        <div class="sidebar-text">Notifications</div>    
-    </div>
-    <div class="sidebar-link">
-        <img src=<%= asset_path("account-outline.svg") %> alt="Profile Link Icon">
-        <div class="sidebar-text">Profile</div>    
+    <div class="sidenav-actions">
+        <%= link_to root_path, class: "sidenav-link" do %>
+            <div class="sidenav-link">
+                <img src=<%= asset_path("home-outline.svg") %> alt="Home Icon">
+                <div class="sidenav-text home">Home</div>    
+            </div>
+        <% end %>
+        
+        <%= link_to root_path, class: "sidenav-link" do %>
+            <div class="sidenav-link">
+                <img src=<%= asset_path("bell-outline.svg") %> alt="Notification Icon">
+                <div class="sidenav-text">Notifications</div>    
+            </div>
+        <% end %>
+        
+        <%= link_to root_path, class: "sidenav-link" do %>
+            <div class="sidenav-link">
+                <img src=<%= asset_path("account-outline.svg") %> alt="Profile Link Icon">
+                <div class="sidenav-text">Profile</div>    
+            </div>
+        <% end %>
     </div>
     <div>
-        <%= button_tag "Post", class: "btn btn--primary sidebar-button"%>
+        <%= button_tag "Post", class: "btn btn--primary sidenav-button"%>
     </div>
-    <div class="sidebar-footer">
-        <%= button_to "Log Out", destroy_user_session_path, data: { turbo: "false" }, method: :delete, class: "btn btn--primary sidebar-button"%>
+    <div class="sidenav-footer">
+        <%= button_to "Log Out", destroy_user_session_path, data: { turbo: "false" }, method: :delete, class: "btn btn--primary sidenav-button"%>
     </div>
 </section>

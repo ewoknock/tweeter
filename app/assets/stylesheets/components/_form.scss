@@ -28,10 +28,10 @@
 
 }
 
-.tweet{
+.tweet-form{
     width: 100%;
     border: none;
-    padding: 0 var(--space-s);
+    padding: var(--space-s);
 
     &:focus{
         outline: none;

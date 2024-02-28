@@ -17,36 +17,52 @@ main{
     font-size: var(--font-size-xl);
     font-weight: 500;
     padding: 0 var(--space-s);
+    a{
+        color: black;
+        div{
+            &:hover{
+                background-color: var(--color-light);
+                border-radius: var(--border-radius);
+            }
+        }
+    }
+
 }
 
 .sidenav img{
     width: var(--font-size-xxxxl);
 }
 
-.sidebar-header{
-    padding-bottom: var(--space-s);
+.sidenav-header{
+    display: flex;
+    flex-shrink: 1;
+    padding-left: var(--space-l);
+
 }
 
-.sidebar-header img{
-    filter: invert(73%) sepia(45%) saturate(6063%) hue-rotate(176deg) brightness(101%) contrast(91%);
+.header-image{
+    display: flex;
+    padding: var(--space-xs);
 }
 
-.sidebar-header,
-.sidebar-link{
-    padding-left: var(--space-s);
+.sidenav-actions{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
 }
 
-.sidebar-link{
+.sidenav-link{
     display: flex;
     align-items: center;
-    gap: var(--space-l);
+    gap: var(--space-m);
+    padding: 0 var(--space-m);
 }
 
-.sidebar-button{
+.sidenav-button{
     width: 100%;
 }
 
-.sidebar-footer{
+.sidenav-footer{
     margin-top: auto;
 }
 
