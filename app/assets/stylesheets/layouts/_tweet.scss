@@ -1,6 +1,11 @@
 .tweet{
+    display: flex;
     padding: var(--space-s);
     transition: all .1s ease-in;
+    gap: var(--space-s);
+    img{
+        width: var(--font-size-xxxxl);
+    }
 
     &:hover{
         background-color: var(--color-light);
@@ -9,4 +14,33 @@
     p{
         align-items: center;
     }
+}
+
+.tweet-body{
+    flex-grow: 1;
+}
+
+.tweet-actions{
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--space-xs);
+
+    img{
+        width: var(--font-size-l);
+    }
+}
+
+.tweet-actions .action-element{
+    display: flex;
+    gap: var(--space-xs);
+    font-size: var(--font-size-s);
+
+    &:hover{
+        color: var(--color-primary-rotate);
+        filter: invert(62%) sepia(97%) saturate(889%) hue-rotate(174deg) brightness(99%) contrast(93%);
+    }
+}
+
+.tweet-actions a{
+    color: black;
 }

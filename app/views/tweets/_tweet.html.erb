@@ -1,6 +1,29 @@
 <%= turbo_frame_tag dom_id(tweet_presenter.tweet) do %>
     <div class="tweet">
-        <p>@<%= tweet_presenter.user.email %> &#183; <%= tweet_presenter.created_at %></p>
-        <p><%= tweet_presenter.body %></p>
+        <div class="tweet-avatar">
+            <img src=<%= asset_path("account-outline.svg") %> alt="Profile Link Icon">  
+        </div>
+        <div class="tweet-body">
+            <p>@<%= tweet_presenter.user.email %> &#183; <%= tweet_presenter.created_at %></p>
+
+            <p><%= tweet_presenter.body %></p>
+
+            <div class="tweet-actions">
+                    <%= link_to "#", class: "action-element" do %>
+                        <img src=<%= asset_path("chat-outline.svg") %> alt="Comments Icon">  
+                        <div>Replies</div>
+                    <% end %>
+                    <%= link_to "#", class: "action-element" do %>
+                        <img src=<%= asset_path("heart-outline.svg") %> alt="Likes Icon">  
+                        <div>Likes</div>
+                    <% end %>
+
+                    <%= link_to "#", class: "action-element" do %>
+                        <img src=<%= asset_path("bookmark-outline.svg") %> alt="Bookmark Icon">  
+                        <div>Bookmark</div>
+                    <% end %>
+
+            </div>
+        </div>
     </div>
 <% end %>
