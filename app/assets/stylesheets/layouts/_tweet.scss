@@ -1,11 +1,11 @@
 .tweet{
-    padding: 0 var(--space-s);
+    padding: var(--space-s);
 
     &:hover{
         background-color: var(--color-light);
     }
 
     p{
-        padding: var(--space-s) 0;
+        align-items: center;
     }
 }
