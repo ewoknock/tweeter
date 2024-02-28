@@ -1,16 +1,17 @@
 <div class="dashboard">
     <div class="feed">
         <div class="feed-spacer"></div>
-            <%= form_with model: Tweet.new, url: tweets_path, local: true do |f| %>
+            <%= form_with model: Tweet.new, url: tweets_path do |f| %>
                 <%= f.text_area :body, placeholder: "What is happening?!", class: "tweet-form" %>
                 <div class="tweet-post">
                     <%= f.submit  class: "btn btn--primary" %>
                 </div>
             <% end %>
-
-        <% Tweet.order(created_at: :desc).each do |tweet| %>
-            <%= render "tweets/tweet", tweet: tweet %>
-        <% end %>
+        <div id="tweets">
+            <% Tweet.order(created_at: :desc).each do |tweet| %>
+                <%= render "tweets/tweet", tweet: tweet %>
+            <% end %>
+        </div>
     </div>
     <div class="sidebar">
         Sidebar

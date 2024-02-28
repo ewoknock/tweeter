@@ -1,9 +1,14 @@
 class TweetsController < ApplicationController
   def create
-    tweet = Tweet.new(tweet_params.merge(user: current_user))
+    @tweet = Tweet.new(tweet_params.merge(user: current_user))
 
-    if tweet.save
-      redirect_to root_path
+    if @tweet.save
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: "Tweet was successfully created." }
+        format.turbo_stream
+      end
+    else
+      render new:, status: :unprocessable_entity
     end
   end
 
