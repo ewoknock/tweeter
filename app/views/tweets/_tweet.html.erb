@@ -9,23 +9,23 @@
             <p><%= tweet_presenter.body %></p>
 
             <div class="tweet-actions">
-                    <%= link_to "#", class: "action-element" do %>
+                    <%= link_to "#", class: "action-element normal" do %>
                         <img src=<%= asset_path("chat-outline.svg") %> alt="Comments Icon">  
                         <div>Replies</div>
                     <% end %>
                     <% if current_user.likes.find_by(tweet: tweet_presenter.tweet) %>
-                        <%= link_to tweet_like_path(tweet_presenter.tweet, tweet_presenter.tweet.likes.find_by(user: current_user)), data: { "turbo-method": "delete"}, class: "action-element" do %>
+                        <%= link_to tweet_like_path(tweet_presenter.tweet, tweet_presenter.tweet.likes.find_by(user: current_user)), data: { "turbo-method": "delete"}, class: "action-element likes" do %>
                             <img src=<%= asset_path("red-heart-icon.svg") %> alt="Likes Icon">  
                             <div><%= tweet_presenter.likes.size %></div>
                         <% end %>
                     <% else %>
-                        <%= link_to tweet_likes_path(tweet_presenter.tweet), data: { "turbo-method": "post"}, class: "action-element" do %>
+                        <%= link_to tweet_likes_path(tweet_presenter.tweet), data: { "turbo-method": "post"}, class: "action-element likes" do %>
                             <img src=<%= asset_path("heart-outline.svg") %> alt="Likes Icon">  
                             <div><%= tweet_presenter.likes.size %></div>
                         <% end %>
                     <% end %>
 
-                    <%= link_to "#", class: "action-element" do %>
+                    <%= link_to "#", class: "action-element normal" do %>
                         <img src=<%= asset_path("bookmark-outline.svg") %> alt="Bookmark Icon">  
                         <div>Bookmark</div>
                     <% end %>
