@@ -3,7 +3,7 @@ class TweetPresenter
 
   attr_reader :tweet
 
-  delegate :user, :body, to: :tweet
+  delegate :user, :body, :likes, to: :tweet
 
   def initialize(tweet)
     @tweet = tweet

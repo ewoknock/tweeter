@@ -13,9 +13,9 @@
                         <img src=<%= asset_path("chat-outline.svg") %> alt="Comments Icon">  
                         <div>Replies</div>
                     <% end %>
-                    <%= link_to "#", class: "action-element" do %>
+                    <%= link_to tweet_likes_path(tweet_presenter.tweet), data: { "turbo-method": "post"}, class: "action-element" do %>
                         <img src=<%= asset_path("heart-outline.svg") %> alt="Likes Icon">  
-                        <div>Likes</div>
+                        <div><%= tweet_presenter.likes.size %></div>
                     <% end %>
 
                     <%= link_to "#", class: "action-element" do %>
