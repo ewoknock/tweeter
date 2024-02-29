@@ -51,4 +51,8 @@
             filter: invert(18%) sepia(98%) saturate(4972%) hue-rotate(0deg) brightness(108%) contrast(133%);
         }
     }
+
+    &.liked{
+        color: red;
+    }
 }
