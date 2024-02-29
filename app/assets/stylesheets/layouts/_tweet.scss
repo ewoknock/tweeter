@@ -30,7 +30,7 @@
     }
 }
 
-.tweet-actions .action-element{
+.action-element{
     display: flex;
     gap: var(--space-xs);
     font-size: var(--font-size-s);
@@ -40,6 +40,7 @@
         filter: invert(62%) sepia(97%) saturate(889%) hue-rotate(174deg) brightness(99%) contrast(93%);
     }
 }
+
 
 .tweet-actions a{
     color: black;

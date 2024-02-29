@@ -16,4 +16,8 @@ class TweetPresenter
       time_ago_in_words(@tweet.created_at)
     end
   end
+
+  def liked_tweets
+
+  end
 end
