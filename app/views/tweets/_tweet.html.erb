@@ -16,7 +16,7 @@
 
                     <%= link_to tweet_presenter.liked_tweet_path, data: { "turbo-method": tweet_presenter.liked_tweet_turbo_data_method}, class: tweet_presenter.liked_tweet_class do %>
                         <img src=<%= asset_path(tweet_presenter.liked_tweet_image) %> alt="Likes Icon">  
-                        <div><%= tweet_presenter.likes.size %></div>
+                        <div><%= tweet_presenter.likes_count %></div>
                     <% end %>
             
 
