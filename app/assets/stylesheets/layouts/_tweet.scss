@@ -57,13 +57,14 @@
     }
 
     &.bookmarks{
-        &:hover{
-            color: var(--color-primary-rotate);
-            filter: invert(62%) sepia(97%) saturate(889%) hue-rotate(174deg) brightness(99%) contrast(93%);
-        }
+        padding-right: var(--space-m);
     }
 
     &.bookmarked{
         color: var(--color-primary);
+        &:hover{
+            color: var(--color-primary-rotate);
+            filter: invert(62%) sepia(97%) saturate(889%) hue-rotate(174deg) brightness(99%) contrast(93%);
+        }
     }
 }
