@@ -54,4 +54,48 @@ class TweetPresenter
   def tweet_liked_by_current_user?
     @tweet_liked_by_current_user ||= tweet.liked_users.include?(current_user)
   end
+
+  def bookmarked_tweet_path
+    if tweet_bookmarked_by_current_user?
+      tweet_bookmark_path(tweet, current_user.bookmarks.find_by(tweet: tweet))
+    else
+      tweet_bookmarks_path(tweet)
+    end
+  end
+
+  def bookmarked_tweet_turbo_data_method
+    if tweet_bookmarked_by_current_user?
+      "delete"
+    else
+      "post"
+    end
+  end
+
+  def bookmarked_tweet_image
+    if tweet_bookmarked_by_current_user?
+      "bookmark-filled.svg"
+    else
+      "bookmark-outline.svg"
+    end
+  end
+
+  def bookmarked_tweet_class
+    if tweet_bookmarked_by_current_user?
+      "action-element bookmarks bookmarked"
+    else
+      "action-element normal"
+    end
+  end
+
+  def bookmarked_tweet_text
+    if tweet_bookmarked_by_current_user?
+      "Bookmarked"
+    else
+      "Bookmark"
+    end
+  end
+
+  def tweet_bookmarked_by_current_user?
+    @tweet_bookmarked_by_current_user ||= tweet.bookmarked_users.include?(current_user)
+  end
 end

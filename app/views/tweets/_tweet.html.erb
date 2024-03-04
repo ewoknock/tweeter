@@ -20,9 +20,9 @@
                     <% end %>
             
 
-                    <%= link_to "#", class: "action-element normal" do %>
-                        <img src=<%= asset_path("bookmark-outline.svg") %> alt="Bookmark Icon">  
-                        <div>Bookmark</div>
+                    <%= link_to tweet_presenter.bookmarked_tweet_path, data: { "turbo_method": tweet_presenter.bookmarked_tweet_turbo_data_method }, class: tweet_presenter.bookmarked_tweet_class do %>
+                        <img src=<%= asset_path(tweet_presenter.bookmarked_tweet_image) %> alt="Bookmark Icon">  
+                        <div><%= tweet_presenter.bookmarked_tweet_text %></div>
                     <% end %>
 
             </div>
