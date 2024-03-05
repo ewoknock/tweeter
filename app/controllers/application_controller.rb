@@ -11,4 +11,5 @@ class ApplicationController < ActionController::Base
     return if controller_name == "usernames"
     redirect_to new_username_path
   end
+
 end

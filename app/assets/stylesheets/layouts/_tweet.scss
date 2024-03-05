@@ -1,3 +1,5 @@
+
+
 .tweet-header{
     display: flex;
     flex-grow: 1;
@@ -31,9 +33,12 @@
         width: var(--font-size-xxxxl);
     }
 
-    &:hover{
-        background-color: var(--color-light);
+    &.hover{
+        &:hover{
+            background-color: var(--color-light);
+        }
     }
+
 
     p{
         align-items: center;
@@ -47,7 +52,7 @@
         font-weight: 600;
     }
 
-    .text-user-info{
+    .tweet-muted-text{
         color: var(--color-text-muted);
         font-size: var(--font-size-s);
     }
@@ -60,6 +65,12 @@
 
     img{
         width: var(--font-size-l);
+    }
+}
+
+.tweet-actions.larger{
+    img{
+    width: var(--font-size-xxl);
     }
 }
 

@@ -8,8 +8,37 @@
             <% end %>
             <p>Post</p>
         </div>
-        <div id="tweets">
-            <%= render partial: "tweets/tweet", collection: @tweets, as: :tweet_presenter %>
+        <div class="tweets">
+            <%= turbo_frame_tag dom_id(@tweet_presenter.tweet) do %>
+                <div class="tweet_card">
+                    <div class="tweet-avatar">
+                        <img src=<%= asset_path("account-outline.svg") %> alt="Profile Link Icon">  
+                    </div>
+                    <div class="tweet-body">
+                        <p><span class="tweet-user-display-name"><%= @tweet_presenter.user.display_name %></span></p>
+                        <p><span class="tweet-muted-text">@<%= @tweet_presenter.user.username %></span></p>
+
+                        <p><%= @tweet_presenter.body %></p>
+
+                        <p class="tweet-muted-text"><%= @tweet_presenter.tweet.created_at.strftime("%k:%M %p") %> &#183; <%= @tweet_presenter.tweet.created_at.strftime("%b %-d, %Y") %>
+                        
+                        <div class="tweet-actions larger">
+                                <%= link_to tweet_path(@tweet_presenter.tweet), data: {"turbo_frame": "_top", "ignore-click": true}, class: "action-element normal" do %>
+                                    <img src=<%= asset_path("chat-outline.svg") %> alt="Comments Icon">  
+                                <% end %>
+
+                                <%= link_to @tweet_presenter.liked_tweet_path, data: { "turbo-method": @tweet_presenter.liked_tweet_turbo_data_method, "ignore-click": true}, class: @tweet_presenter.liked_tweet_class do %>
+                                    <img src=<%= asset_path(@tweet_presenter.liked_tweet_image) %> alt="Likes Icon">  
+                                <% end %>
+                        
+
+                                <%= link_to @tweet_presenter.bookmarked_tweet_path, data: { "turbo_method": @tweet_presenter.bookmarked_tweet_turbo_data_method, "ignore-click": true }, class: @tweet_presenter.bookmarked_tweet_class do %>
+                                    <img src=<%= asset_path(@tweet_presenter.bookmarked_tweet_image) %> alt="Bookmark Icon">  
+                                <% end %>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
         </div>
     </div>
     <div class="sidebar">
