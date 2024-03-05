@@ -10,13 +10,19 @@
         </div>
         <div class="tweets">
             <%= turbo_frame_tag dom_id(@tweet_presenter.tweet) do %>
-                <div class="tweet_card">
-                    <div class="tweet-avatar">
-                        <img src=<%= asset_path("account-outline.svg") %> alt="Profile Link Icon">  
+                <div class="tweet_card vertical">
+                    <div class="tweet_user_header">
+                        <div class="tweet-avatar">
+                            <img src=<%= asset_path("account-outline.svg") %> alt="Profile Link Icon">  
+                        </div>
+                        <div>
+                            <p><span class="tweet-user-display-name"><%= @tweet_presenter.user.display_name %></span></p>
+                            <p><span class="tweet-muted-text">@<%= @tweet_presenter.user.username %></span></p>
+                        </div>
                     </div>
-                    <div class="tweet-body">
-                        <p><span class="tweet-user-display-name"><%= @tweet_presenter.user.display_name %></span></p>
-                        <p><span class="tweet-muted-text">@<%= @tweet_presenter.user.username %></span></p>
+          
+
+                    <div class="tweet-body larger">
 
                         <p><%= @tweet_presenter.body %></p>
 
