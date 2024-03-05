@@ -1,0 +1,18 @@
+<div class="dashboard">
+    <div class="feed">
+        <div class="tweet-header">
+            <%= link_to :back do %>
+                <div>
+                    <%= image_tag "arrow-left.svg" %>
+                </div>
+            <% end %>
+            <p>Post</p>
+        </div>
+        <div id="tweets">
+            <%= render partial: "tweets/tweet", collection: @tweets, as: :tweet_presenter %>
+        </div>
+    </div>
+    <div class="sidebar">
+        Sidebar
+    </div>
+</div>

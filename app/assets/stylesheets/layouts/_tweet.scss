@@ -1,4 +1,36 @@
-.tweet{
+.tweet-header{
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    gap: var(--space-m);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    img{
+        width: var(--font-size-xxl);
+    }
+
+    a{
+        color: black;
+        div{
+            padding: var(--space-xs);
+            transition: all .1s ease-in;
+            &:hover{
+                background-color: var(--color-light);
+                border-radius: var(--border-radius);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+.tweet_card{
     display: flex;
     padding: var(--space-s);
     transition: all .1s ease-in;

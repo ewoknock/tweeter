@@ -1,6 +1,7 @@
 <div class="login">
 
   <h2>Set your username</h2>
+  <p><%= current_user.email %></h2>
 
   <%= form_with model: current_user, local: true, url: username_path(current_user), html: { class: "login" } do |f| %>
     <div class="login__group">

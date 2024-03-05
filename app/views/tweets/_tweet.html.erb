@@ -1,5 +1,5 @@
 <%= turbo_frame_tag dom_id(tweet_presenter.tweet) do %>
-    <div class="tweet">
+    <div class="tweet_card">
         <div class="tweet-avatar">
             <img src=<%= asset_path("account-outline.svg") %> alt="Profile Link Icon">  
         </div>
@@ -9,7 +9,7 @@
             <p><%= tweet_presenter.body %></p>
 
             <div class="tweet-actions">
-                    <%= link_to "#", class: "action-element normal" do %>
+                    <%= link_to tweet_path(tweet_presenter.tweet), data: {"turbo_frame": "_top"}, class: "action-element normal" do %>
                         <img src=<%= asset_path("chat-outline.svg") %> alt="Comments Icon">  
                         <div>Replies</div>
                     <% end %>
