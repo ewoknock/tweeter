@@ -1,0 +1,20 @@
+<div class="login">
+
+  <h2>Set your username</h2>
+
+  <%= form_with model: current_user, local: true, url: username_path(current_user), html: { class: "login" } do |f| %>
+    <div class="login__group">
+      <%= f.label :username %><br />
+      <%= f.text_field :username, autofocus: true, class: "login__input"  %>
+    </div>
+
+    <div class="login__group">
+      <%= f.label :display_name %><br />
+      <%= f.text_field :display_name, autofocus: true, class: "login__input"  %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Set username", class: "btn btn--primary"  %>
+    </div>
+  <% end %>
+</div>

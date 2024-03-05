@@ -6,7 +6,7 @@ class TweetsController < ApplicationController
 
     if @tweet.save
       respond_to do |format|
-        format.html { redirect_to root_path, notice: "Tweet was successfully created." }
+        format.html { redirect_to dashboard_path, notice: "Tweet was successfully created." }
         format.turbo_stream
       end
     else
