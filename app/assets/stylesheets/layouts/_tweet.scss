@@ -22,14 +22,6 @@
     }
 }
 
-
-
-
-
-
-
-
-
 .tweet_card{
     display: flex;
     padding: var(--space-s);
@@ -50,6 +42,15 @@
 
 .tweet-body{
     flex-grow: 1;
+
+    .tweet-user-display-name{
+        font-weight: 600;
+    }
+
+    .text-user-info{
+        color: var(--color-text-muted);
+        font-size: var(--font-size-s);
+    }
 }
 
 .tweet-actions{

@@ -4,7 +4,12 @@
             <img src=<%= asset_path("account-outline.svg") %> alt="Profile Link Icon">  
         </div>
         <div class="tweet-body">
-            <p>@<%= tweet_presenter.user.email %> &#183; <%= tweet_presenter.created_at %></p>
+            <p>
+                <span class="tweet-user-display-name"><%= tweet_presenter.user.display_name %></span>
+                <span class="text-user-info">@<%= tweet_presenter.user.username %> &#183; <%= tweet_presenter.created_at %></span>
+            </p>
+
+            
 
             <p><%= tweet_presenter.body %></p>
 
