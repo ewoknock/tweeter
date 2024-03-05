@@ -11,6 +11,14 @@ class User < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :bookmarked_tweets, through: :bookmarks, source: :tweet
 
+  validates :username, uniqueness: { case_sensitive: false }, allow_blank: true
+
+  before_save :set_display_name, if: -> { display_name.blank? }
+
+  def set_display_name
+    self.display_name = username.humanize
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
