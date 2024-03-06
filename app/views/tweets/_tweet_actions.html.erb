@@ -1,0 +1,15 @@
+<%= turbo_frame_tag "tweet-action-bar" do %>
+    <div class="tweet-actions larger">
+        <%= link_to tweet_path(tweet_presenter.tweet), data: {"turbo_frame": "_top", "ignore-click": true}, class: "action-element normal" do %>
+            <img src=<%= asset_path("chat-outline.svg") %> alt="Comments Icon">  
+        <% end %>
+
+        <%= link_to tweet_presenter.liked_tweet_path, data: { "turbo-method": tweet_presenter.liked_tweet_turbo_data_method, "ignore-click": true}, class: tweet_presenter.liked_tweet_class do %>
+            <img src=<%= asset_path(tweet_presenter.liked_tweet_image) %> alt="Likes Icon">  
+        <% end %>
+
+        <%= link_to tweet_presenter.bookmarked_tweet_path, data: { "turbo_method": tweet_presenter.bookmarked_tweet_turbo_data_method, "ignore-click": true }, class: tweet_presenter.bookmarked_tweet_class do %>
+            <img src=<%= asset_path(tweet_presenter.bookmarked_tweet_image) %> alt="Bookmark Icon">  
+        <% end %>
+    </div>
+<% end %>

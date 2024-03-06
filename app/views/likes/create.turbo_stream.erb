@@ -1,5 +1,23 @@
-<%= turbo_stream.replace dom_id(@tweet) do %>
-    <%= render partial: "tweets/tweet", locals: { tweet_presenter: TweetPresenter.new(@tweet, current_user) }%>
+<%
+    puts "\n\n\n\n\n\n\n\n\n#{params}"
+    partial_name = if params[:source] == "tweet_actions"
+                     "tweets/tweet_actions"
+                   else
+                     "tweets/tweet"
+                   end
+    turbo_target = if params[:source] == "tweet_actions"
+                    "tweet-action-bar"
+                 else  
+                    dom_id(@tweet)
+                 end
+    puts "#{partial_name}"
+    puts "#{turbo_target}\n\n\n\n\n\n\n\n\n\n\n"
+
+%>
+
+
+<%= turbo_stream.replace turbo_target do %>
+    <%= render partial: partial_name, locals: { tweet_presenter: TweetPresenter.new(@tweet, current_user, params[:source]) }%>
 <% end %>
 
 
