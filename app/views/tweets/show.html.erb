@@ -32,7 +32,7 @@
                 </div>
                 <%= render "shared/tweet_form", form_submit_route: tweet_replies_path(@tweet_presenter.tweet), source: "tweet" %>
             </div>
-            <div class="tweets">
+            <div id="tweets">
                 <%= render partial: "tweets/tweet", collection: @replies, as: :tweet_presenter %>
             </div>
 
