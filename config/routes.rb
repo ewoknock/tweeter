@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :tweets, only: [:show, :create] do
     resources :likes, only: [:create, :destroy]
     resources :bookmarks, only: [:create, :destroy]
+    resources :replies, only: :create
   end
 
   resources :usernames, only: [:new, :update]

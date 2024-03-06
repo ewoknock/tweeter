@@ -1,7 +1,7 @@
 <div class="dashboard">
     <div class="feed">
         <div class="feed-spacer"></div>
-        <%= render "shared/tweet_form", source: "dashboard" %>
+        <%= render "shared/tweet_form", form_submit_route: tweets_path, source: "dashboard" %>
         <div id="tweets">
             <%= render partial: "tweets/tweet", collection: @tweets, as: :tweet_presenter %>
         </div>

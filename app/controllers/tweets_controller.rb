@@ -4,6 +4,9 @@ class TweetsController < ApplicationController
   def show
     @tweet = Tweet.find(params[:id])
     @tweet_presenter = TweetPresenter.new(@tweet, current_user, "tweet_actions")
+    @replies = @tweet.replies.order(created_at: :desc).map do |replies|
+      TweetPresenter.new(replies, current_user)
+    end
   end
   
   def create

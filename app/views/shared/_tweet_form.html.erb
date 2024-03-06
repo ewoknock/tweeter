@@ -9,9 +9,10 @@
                   else 
                     "Reply"
                   end
+                   
 %>
 
-<%= form_with model: Tweet.new, url: tweets_path do |f| %>
+<%= form_with model: Tweet.new, url: form_submit_route do |f| %>
     <%= f.text_area :body, placeholder: placeholder_text, class: "tweet-form" %>
     <div class="tweet-post">
         <%= f.submit button_text, class: "btn btn--primary" %>
