@@ -1,7 +1,16 @@
-.bookmark-header{
+.bookmark-user-info-header{
     display: flex;
-    flex-direction: column;
-    font-size: var(--font-size-xl);
-    padding-left: var(--space-m);
-    padding-bottom: var(--space-xs);
+    justify-content: space-between;
+    align-items: end;
+    padding: var(--space-m);
+    margin-top: var(--space-xxxl);
+    img{
+        width: calc(3*var(--font-size-xxxxl));
+        background-color: var(--color-light);
+        border: 2px solid white;
+        border-radius: calc(3*var(--border-radius));
+    }
+    a{
+        padding-bottom: var(--space-l);
+    }
 }

@@ -56,3 +56,13 @@
     --shadow-large: 2px 4px 10px hsl(0 0% 0% / 0.1);
     --shadow-small: 1px 3px 6px hsl(0 0% 0% / 0.1);
 }
+
+.strong-text{
+    font-weight: 700 !important;
+    color: black;
+}
+
+.muted-text{
+    color: var(--color-text-muted);
+    font-size: var(--font-size-s);
+}

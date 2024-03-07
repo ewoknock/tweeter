@@ -46,14 +46,13 @@
 
     &--light{
         color: var(--color-dark);
-        background-color: var(--color-light);
+        border-color: var(--color-light);
 
         &:hover,
         &:focus,
         &:focus-within,
         &:active{
-            color: var(--color-dark);
-            filter: brightness(92%);
+            background-color: var(--color-light);
         }
     }
 

@@ -1,0 +1,35 @@
+.profile-user-info-body{
+    display: flex;
+    flex-direction: column;
+    padding-left: var(--space-l);
+    gap: var(--space-s);
+}
+
+.profile-user-info-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: var(--space-m);
+    margin-top: var(--space-xxxl);
+    img{
+        width: calc(3*var(--font-size-xxxxl));
+        background-color: var(--color-light);
+        border: 2px solid white;
+        border-radius: calc(3*var(--border-radius));
+    }
+
+    button{
+        margin-bottom: var(--space-l);
+    }
+}
+
+.user-bio{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.follow-stats{
+    display: flex;
+    gap: var(--space-s);
+}
