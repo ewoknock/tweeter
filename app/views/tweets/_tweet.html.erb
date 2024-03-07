@@ -16,7 +16,7 @@
             <div class="tweet-actions">
                     <%= link_to tweet_path(tweet_presenter.tweet), data: {"turbo_frame": "_top", "ignore-click": true}, class: "action-element normal" do %>
                         <img src=<%= asset_path("chat-outline.svg") %> alt="Comments Icon">  
-                        <div>Replies</div>
+                        <div><%= tweet_presenter.replies_count %></div>
                     <% end %>
 
                     <%= link_to tweet_presenter.liked_tweet_path, data: { "turbo-method": tweet_presenter.liked_tweet_turbo_data_method, "ignore-click": true}, class: tweet_presenter.liked_tweet_class do %>

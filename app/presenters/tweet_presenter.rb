@@ -6,7 +6,7 @@ class TweetPresenter
   attr_reader :liked_tweet_path, :liked_tweet_turbo_data_method, :liked_tweet_image, :liked_tweet_class
   attr_reader :bookmarked_tweet_path, :bookmarked_tweet_turbo_data_method, :bookmarked_tweet_image, :bookmarked_tweet_class, :bookmarked_tweet_text
 
-  delegate :user, :body, :likes, :likes_count, :liked_users, to: :tweet
+  delegate :user, :body, :likes, :likes_count, :liked_users, :replies_count, to: :tweet
 
   def initialize(tweet, current_user, source = "tweet_card")
     @tweet = tweet
