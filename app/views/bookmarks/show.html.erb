@@ -1,0 +1,16 @@
+<div class="dashboard">
+    <div class="feed">
+        <div class="bookmark-header">
+            <p class="strong-text">Bookmarks</p>
+            <p class="tweet-muted-text">@<%= current_user.username %></p>
+        </div>
+        <div class="tweet">
+            <div id="tweets">
+                <%= render partial: "tweets/tweet", collection: @bookmarks, as: :tweet_presenter %>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        Sidebar
+    </div>
+</div>

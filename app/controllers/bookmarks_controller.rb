@@ -1,6 +1,12 @@
 class BookmarksController < ApplicationController
   before_action :authenticate_user!
 
+  def show
+    @bookmarks = current_user.bookmarks.map do |bookmark|
+      TweetPresenter.new(Tweet.find(bookmark.tweet_id), current_user)
+    end
+  end
+
   def create
     @bookmark = current_user.bookmarks.create(tweet: tweet, user: tweet.user)
     respond_to do |format|
