@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get :dashboard, to: "dashboard#index"
   get :bookmarks, to: "bookmarks#show"
+  get :profile, to: "profile#show"
 
   resources :tweets, only: [:show, :create] do
     resources :likes, only: [:create, :destroy]

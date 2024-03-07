@@ -75,6 +75,31 @@ main{
     justify-content: space-between;
 }
 
+.dashboard-header{
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    gap: var(--space-m);
+    font-size: var(--font-size-xl);
+    margin-left: var(--space-s);
+
+    img{
+        width: var(--font-size-xxl);
+    }
+
+    a{
+        color: black;
+        div{
+            padding: var(--space-xs);
+            transition: all .1s ease-in;
+            &:hover{
+                background-color: var(--color-light);
+                border-radius: var(--border-radius);
+            }
+        }
+    }
+}
+
 .feed{
     flex: 1 1 0;
     max-width: 35rem;

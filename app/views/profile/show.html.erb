@@ -1,0 +1,21 @@
+<div class="dashboard">
+    <div class="feed">
+        <div class="dashboard-header">
+            <%= link_to :back do %>
+                <div>
+                    <%= image_tag "arrow-left.svg" %>
+                </div>
+            <% end %>
+            <div>
+                <p class="strong-text"><%= current_user.username %></p>
+                <p class="tweet-muted-text"><%= @tweets.size %> posts</p>
+            </div>
+        </div>
+        <div class="tweet">
+
+        </div>
+    </div>
+    <div class="sidebar">
+        Sidebar
+    </div>
+</div>
