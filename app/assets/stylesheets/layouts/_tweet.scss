@@ -31,6 +31,9 @@
     padding: var(--space-s);
     transition: all .1s ease-in;
     gap: var(--space-s);
+    border-top: var(--border);
+    border-bottom: var(--border);
+
     img{
         width: var(--font-size-xxxxl);
     }
@@ -46,12 +49,24 @@
     }
 
     &.vertical{
+        border-top: 0 !important;
         flex-direction: column;
     }
 }
 
 .tweet-body{
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
+    &.larger{
+        p{
+            padding-bottom: var(--space-xs);
+        }
+    }
+}
+
+.tweet-body-text{
+    padding-bottom: var(--space-m);
 }
 .tweet-user-display-name{
     font-weight: 600;
@@ -65,10 +80,15 @@
 .tweet-actions{
     display: flex;
     justify-content: space-between;
-    padding-top: var(--space-xs);
+    align-items: center;
 
     img{
         width: var(--font-size-l);
+    }
+    &.larger{
+        padding: var(--space-s) 0;
+        border-top: var(--border);
+        border-bottom: var(--border);
     }
 }
 

@@ -1,5 +1,5 @@
 <%= turbo_frame_tag dom_id(tweet_presenter.tweet) do %>
-    <div data-controller="tweet-card" data-tweet-path="<%= tweet_path(tweet_presenter.tweet) %>" class="tweet_card hover">
+    <article data-controller="tweet-card" data-tweet-path="<%= tweet_path(tweet_presenter.tweet) %>" class="tweet_card hover">
         <div class="tweet-avatar">
             <img src=<%= asset_path("account-outline.svg") %> alt="Profile Link Icon">  
         </div>
@@ -11,7 +11,7 @@
 
             
 
-            <p><%= tweet_presenter.body %></p>
+            <p class="tweet-body-text"><%= tweet_presenter.body %></p>
 
             <div class="tweet-actions">
                     <%= link_to tweet_path(tweet_presenter.tweet), data: {"turbo_frame": "_top", "ignore-click": true}, class: "action-element normal" do %>
@@ -32,5 +32,5 @@
 
             </div>
         </div>
-    </div>
+    </article>
 <% end %>

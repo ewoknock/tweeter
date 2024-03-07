@@ -2,7 +2,6 @@ main{
     display: grid;
     grid-template-columns: 1fr 3fr;
     margin: auto;
-    padding: var(--space-m);
     gap: var(--space-m);
     height: 100vh;
 }
@@ -79,7 +78,7 @@ main{
 .feed{
     flex: 1 1 0;
     max-width: 35rem;
-    padding: 0 var(--space-m);
+    border: var(--border);
 }
 
 .feed-spacer{
@@ -87,4 +86,6 @@ main{
     flex-grow: 1;
     margin-bottom: var(--space-xxxxl);
     width: 100%;
+    border: var(--border);
+
 }

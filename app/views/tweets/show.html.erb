@@ -19,13 +19,12 @@
                         <p><span class="tweet-muted-text">@<%= @tweet_presenter.user.username %></span></p>
                     </div>
                 </div>
-        
-
                 <div class="tweet-body larger">
+                    <div>
+                        <p><%= @tweet_presenter.body %></p>
 
-                    <p><%= @tweet_presenter.body %></p>
-
-                    <p class="tweet-muted-text"><%= @tweet_presenter.tweet.created_at.strftime("%k:%M %p") %> &#183; <%= @tweet_presenter.tweet.created_at.strftime("%b %-d, %Y") %>
+                        <p class="tweet-muted-text"><%= @tweet_presenter.tweet.created_at.strftime("%k:%M %p") %> &#183; <%= @tweet_presenter.tweet.created_at.strftime("%b %-d, %Y") %>
+                    </div>
                     <div class="tweet_actions_main">
                         <%= render "tweets/tweet_actions", tweet_presenter: @tweet_presenter %>
                     </div>
