@@ -11,7 +11,7 @@ class ProfileController < ApplicationController
   def get_tweets(source)
     case source
     when "replies"
-      @tweets = user_posts
+      @tweets = user_replies
       @msg = "#{@tweets.size} posts"
       @replies_active = "active"
     when "likes"
@@ -26,14 +26,31 @@ class ProfileController < ApplicationController
   end
 
   def user_posts
-    current_user.tweets.order(created_at: :desc).map do |tweet|
+    tweet.map do |tweet|
       TweetPresenter.new(tweet, current_user)
     end 
   end
 
-  def user_likes
-    current_user.liked_tweets.order(created_at: :desc).map do |tweet|
+  def user_replies
+    @tweets = Array.new()
+    tweet.each do |reply|
+      unless reply.parent_tweet_id.nil?
+          @tweets.push(reply.parent_tweet) #unless @tweets.include?(reply.parent_tweet)
+          @tweets.push(reply)
+      end
+    end
+    @tweets.map do |tweet|
       TweetPresenter.new(tweet, current_user)
     end
+  end
+
+  def user_likes
+    tweet.map do |tweet|
+      TweetPresenter.new(tweet, current_user)
+    end
+  end
+
+  def tweet
+    current_user.tweets.order(created_at: :desc)
   end
 end
