@@ -31,26 +31,7 @@
                 </div>
             </div>
         </div>
-        <div class="profile-nav">
-            <div class="<%= "#{@profile_nav_class} #{@posts_active}" %>">
-                <%= link_to profile_path(source: "posts") do %>
-                    Posts
-                <% end %>
-            </div>
-            <div class="<%= "#{@profile_nav_class} #{@replies_active}" %>">
-                <%= link_to profile_path(source: "replies") do %>
-                    Replies
-                <% end %>            
-            </div>
-            <div class="<%= "#{@profile_nav_class} #{@likes_active}" %>">
-                <%= link_to profile_path(source: "likes") do %>
-                    Likes   
-                <% end %>
-            </div>
-        </div>
-        <div id="tweets">
-            <%= render partial: "tweets/tweet", collection: @tweets, as: :tweet_presenter %>
-        </div>
+        <%= render "profile_nav" %>
     </div>
     <div class="sidebar">
         Sidebar

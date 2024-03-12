@@ -2,34 +2,37 @@ class ProfileController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @profile_nav_class = "profile-nav-action"
-    get_tweets(params[:source])
+    @tweets = tweet.map do |tweet|
+      TweetPresenter.new(tweet, current_user)
+    end
+    @posts_active = "active"
+    #get_tweets(params[:source])
   end
 
-  private
-  
-  def get_tweets(source)
-    case source
-    when "replies"
-      @tweets = user_replies
-      @msg = "#{@tweets.size} posts"
-      @replies_active = "active"
-    when "likes"
-      @tweets = user_likes
-      @msg = "#{@tweets.size} likes"
-      @likes_active = "active"
-    else
-      @tweets = user_posts
-      @msg = "#{@tweets.size} posts"
-      @posts_active = "active"
+  def likes
+    @tweets = current_user.liked_tweets.order(created_at: :desc).map do |tweet|
+      TweetPresenter.new(tweet, current_user)
+    end
+    @likes_active = "active"
+
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace("profile-tweets", partial: "profile_nav", local: {tweets: @tweets})
+      end
     end
   end
 
-  def user_posts
-    tweet.map do |tweet|
-      TweetPresenter.new(tweet, current_user)
-    end 
+  def replies
+    @tweets = user_replies
+    @replies_active = "active"
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace("profile-tweets", partial: "profile_nav", local: {tweets: @tweets})
+      end
+    end
   end
+
+  private
 
   def user_replies
     @tweets = Array.new()

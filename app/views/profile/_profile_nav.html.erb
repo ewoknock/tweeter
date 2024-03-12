@@ -1,0 +1,17 @@
+<div id="profile-tweets">
+    <div class="profile-nav">
+        <div class="<%= "profile-nav-action #{@posts_active}" %>">
+            <%= link_to "Posts", profile_path %>
+        </div>
+        <div class="<%= "profile-nav-action #{@replies_active}" %>">
+            <%= link_to "Replies", profile_replies_path, data: { "turbo-stream": true } %>         
+        </div>
+        <div class="<%= "profile-nav-action #{@likes_active}" %>">
+            <%= link_to "Likes", profile_likes_path, data: { "turbo-stream": true } %>
+        </div>
+    </div>
+    <div id="tweets">
+        <%= render partial: "tweets/tweet", collection: @tweets, as: :tweet_presenter %>
+    </div>
+</div>
+
