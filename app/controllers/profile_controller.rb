@@ -45,7 +45,7 @@ class ProfileController < ApplicationController
   end
 
   def user_likes
-    tweet.map do |tweet|
+    current_user.liked_tweets.order(created_at: :desc).map do |tweet|
       TweetPresenter.new(tweet, current_user)
     end
   end
