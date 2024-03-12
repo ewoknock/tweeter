@@ -33,3 +33,26 @@
     display: flex;
     gap: var(--space-s);
 }
+
+.profile-nav{
+    display: flex;
+    justify-content: space-around;
+    a{
+        color: black;
+
+    }
+}
+
+.profile-nav-action{
+    padding: var(--space-s) 0;
+    text-align: center;
+    flex-grow: 1;
+    &:hover{
+        background-color: var(--color-light);
+    }
+}
+
+.active{
+    font-weight: 700;
+    border-bottom: 3px solid var(--color-primary);
+}

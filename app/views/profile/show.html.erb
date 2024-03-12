@@ -8,7 +8,7 @@
             <% end %>
             <div>
                 <p class="strong-text"><%= current_user.username %></p>
-                <p class="muted-text"><%= @tweets.size %> posts</p>
+                <p class="muted-text"><%= @msg %></p>
             </div>
         </div>
         <div class="profile-user-info-header">
@@ -31,8 +31,25 @@
                 </div>
             </div>
         </div>
-        <div class="tweet">
-
+        <div class="profile-nav">
+            <div class="<%= "#{@profile_nav_class} #{@posts_active}" %>">
+                <%= link_to profile_path(source: "posts") do %>
+                    Posts
+                <% end %>
+            </div>
+            <div class="<%= "#{@profile_nav_class} #{@replies_active}" %>">
+                <%= link_to profile_path(source: "replies") do %>
+                    Replies
+                <% end %>            
+            </div>
+            <div class="<%= "#{@profile_nav_class} #{@likes_active}" %>">
+                <%= link_to profile_path(source: "likes") do %>
+                    Likes   
+                <% end %>
+            </div>
+        </div>
+        <div id="tweets">
+            <%= render partial: "tweets/tweet", collection: @tweets, as: :tweet_presenter %>
         </div>
     </div>
     <div class="sidebar">
