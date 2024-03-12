@@ -1,7 +1,7 @@
 <div id="profile-tweets">
     <div class="profile-nav">
         <div class="<%= "profile-nav-action #{@posts_active}" %>">
-            <%= link_to "Posts", profile_path %>
+            <%= link_to "Posts", profile_path, data: { "turbo-stream": true }, remote: true %>
         </div>
         <div class="<%= "profile-nav-action #{@replies_active}" %>">
             <%= link_to "Replies", profile_replies_path, data: { "turbo-stream": true } %>         

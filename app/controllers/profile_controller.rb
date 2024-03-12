@@ -7,6 +7,12 @@ class ProfileController < ApplicationController
     end
     @posts_active = "active"
     #get_tweets(params[:source])
+    respond_to do |format|
+      format.html
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace("profile-tweets", partial: "profile_nav", local: {tweets: @tweets})
+      end
+    end
   end
 
   def likes
