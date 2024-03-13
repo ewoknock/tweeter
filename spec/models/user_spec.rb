@@ -4,8 +4,12 @@ RSpec.describe User, type: :model do
   it { should have_many(:tweets).dependent(:destroy) }
   it { should have_many(:likes).dependent(:destroy) }
   it { should have_many(:liked_tweets).through(:likes).source(:tweet) }
-  it { should have_many(:bookmarks).dependent(:destroy)}
+  it { should have_many(:bookmarks).dependent(:destroy) }
   it { should have_many(:bookmarked_tweets).through(:bookmarks).source(:tweet) }
+  it { should have_many(:follows).dependent(:destroy) }
+  it { should have_many(:following_users).through(:follows) }
+  it { should have_many(:reverse_follows).with_foreign_key(:following_user_id).class_name("Follow") }
+  it { should have_many(:followers).through(:reverse_follows).source(:user) }
 
   it { should validate_uniqueness_of(:username).case_insensitive.allow_blank }
 

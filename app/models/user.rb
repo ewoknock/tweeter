@@ -10,6 +10,10 @@ class User < ApplicationRecord
   has_many :liked_tweets, through: :likes, source: :tweet
   has_many :bookmarks, dependent: :destroy
   has_many :bookmarked_tweets, through: :bookmarks, source: :tweet
+  has_many :follows, dependent: :destroy
+  has_many :following_users, through: :follows
+  has_many :reverse_follows, foreign_key: :following_user_id, class_name: "Follow"
+  has_many :followers, through: :reverse_follows, source: :user
 
   validates :username, uniqueness: { case_sensitive: false }, allow_blank: true
   
