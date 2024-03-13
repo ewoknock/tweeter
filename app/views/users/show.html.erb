@@ -13,11 +13,7 @@
         </div>
         <div class="profile-user-info-header">
             <img src=<%= asset_path("account-outline.svg") %> alt="Profile Link Icon">  
-            <% if @user.followers.include?(current_user) %>
-                <%= link_to "Unfollow", user_follow_path(@user, current_user.follows.find_by(following_user_id: @user)), data: { "turbo-method": :delete }, class: "btn btn--light" %>
-            <% else %>
-                <%= link_to "Follow", user_follows_path(current_user, following_user_id: @user),  data: { "turbo-method": :post }, class: "btn btn--light" %>
-            <% end %>
+            <%= render "follow_button", user: @user, current_user: current_user %>
         </div>
         <div class="profile-user-info-body">
             <%= render "profile/profile_bio", user: @user %>
