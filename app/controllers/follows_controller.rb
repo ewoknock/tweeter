@@ -15,7 +15,7 @@ class FollowsController < ApplicationController
     follow = Follow.find(params[:id])
     follow.destroy
     respond_to do |format|
-      format.html { redirect_to user_path(user) }
+      format.html { redirect_to user_path(follow.following_user_id) }
       format.turbo_stream
     end
     
