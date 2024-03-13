@@ -7,7 +7,7 @@
                 </div>
             <% end %>
             <div>
-                <p class="strong-text"><%= current_user.username %></p>
+                <p class="strong-text"><%= @user.username %></p>
                 <p class="muted-text"><%= @msg %></p>
             </div>
         </div>
@@ -18,9 +18,9 @@
             <% end %>
         </div>
         <div class="profile-user-info-body">
-            <%= render "profile_bio", user: current_user %>
+            <%= render "profile/profile_bio", user: @user %>
         </div>
-        <%= render "profile_nav" %>
+        <%= render "profile/profile_nav", user: @user %>
     </div>
     <div class="sidebar">
         Sidebar

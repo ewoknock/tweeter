@@ -1,0 +1,14 @@
+<%= turbo_frame_tag "profile-bio" do %>
+    <div class="user-info">
+        <p class="strong-text"><%= user.display_name %></p>
+        <p class="muted-text">@<%= user.username %></p>
+    </div>
+    <div class="user-bio">
+        <div> BIO </div>
+        <div> Other links </div>
+        <div class="follow-stats">
+            <div><span class="strong-text">0</span> Following</div>
+            <div><span class="strong-text">0</span> Followers</div>
+        </div>
+    </div>
+<% end %>

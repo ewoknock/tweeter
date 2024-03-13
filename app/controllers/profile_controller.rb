@@ -6,6 +6,7 @@ class ProfileController < ApplicationController
       TweetPresenter.new(tweet, current_user)
     end
     @posts_active = "active"
+    @msg = "#{@tweets.size} posts"
     #get_tweets(params[:source])
     respond_to do |format|
       format.html
@@ -20,7 +21,7 @@ class ProfileController < ApplicationController
       TweetPresenter.new(tweet, current_user)
     end
     @likes_active = "active"
-
+    @msg = "#{@tweets.size} likes"
     respond_to do |format|
       format.turbo_stream do
         render turbo_stream: turbo_stream.replace("profile-tweets", partial: "profile_nav", local: {tweets: @tweets})
@@ -31,6 +32,7 @@ class ProfileController < ApplicationController
   def replies
     @tweets = user_replies
     @replies_active = "active"
+    @msg = "#{@tweets.size} posts"
     respond_to do |format|
       format.turbo_stream do
         render turbo_stream: turbo_stream.replace("profile-tweets", partial: "profile_nav", local: {tweets: @tweets})
