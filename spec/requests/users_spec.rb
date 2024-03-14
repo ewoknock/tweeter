@@ -10,5 +10,10 @@ RSpec.describe "Users", type: :request do
       get user_path(user)
       expect(response).to have_http_status(:success)
     end
+
+    it "redirects to profile_path if the user is him/herself" do
+      get user_path(user)
+      expect(response).to redirect_to profile_path
+    end
   end
 end
