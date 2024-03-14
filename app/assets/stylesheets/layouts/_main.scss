@@ -64,7 +64,10 @@ main{
 }
 
 .sidenav-footer{
-    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    width: 17rem;
+    padding: 1rem;
 }
 
 
