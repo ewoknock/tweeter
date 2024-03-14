@@ -2,7 +2,6 @@ class ProfileController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    puts current_user.username
     @tweets = tweet.map do |tweet|
       TweetPresenter.new(tweet, current_user)
     end
@@ -12,7 +11,9 @@ class ProfileController < ApplicationController
     respond_to do |format|
       format.html
       format.turbo_stream do
-        render turbo_stream: turbo_stream.replace("profile-tweets", partial: "profile_nav", local: {tweets: @tweets})
+        render turbo_stream: [
+          turbo_stream.replace("profile-tweets", partial: "profile_nav", local: {tweets: @tweets}),
+          turbo_stream.replace("profile-tweet-count", partial: "shared/profile_tweet_count", locals: {user: current_user, msg: @msg })]
       end
     end
   end
@@ -25,7 +26,9 @@ class ProfileController < ApplicationController
     @msg = "#{@tweets.size} likes"
     respond_to do |format|
       format.turbo_stream do
-        render turbo_stream: turbo_stream.replace("profile-tweets", partial: "profile_nav", local: {tweets: @tweets})
+        render turbo_stream: [
+            turbo_stream.replace("profile-tweets", partial: "profile_nav", local: {tweets: @tweets}),
+            turbo_stream.replace("profile-tweet-count", partial: "shared/profile_tweet_count", locals: {user: current_user, msg: @msg })]
       end
     end
   end
@@ -36,7 +39,9 @@ class ProfileController < ApplicationController
     @msg = "#{@tweets.size} posts"
     respond_to do |format|
       format.turbo_stream do
-        render turbo_stream: turbo_stream.replace("profile-tweets", partial: "profile_nav", local: {tweets: @tweets})
+        render turbo_stream: [
+          turbo_stream.replace("profile-tweets", partial: "profile_nav", local: {tweets: @tweets}),
+          turbo_stream.replace("profile-tweet-count", partial: "shared/profile_tweet_count", locals: {user: current_user, msg: @msg })]
       end
     end
   end

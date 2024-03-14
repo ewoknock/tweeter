@@ -13,7 +13,9 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html
       format.turbo_stream do
-        render turbo_stream: turbo_stream.replace("profile-tweets", partial: "user_nav", locals: {user: user, tweets: @tweets})
+        render turbo_stream: [
+          turbo_stream.replace("profile-tweets", partial: "user_nav", locals: {user: user, tweets: @tweets}),
+          turbo_stream.replace("profile-tweet-count", partial: "shared/profile_tweet_count", locals: {user: user, msg: @msg })]
       end
     end
   end
@@ -26,7 +28,9 @@ class UsersController < ApplicationController
     @msg = "#{@tweets.size} likes"
     respond_to do |format|
       format.turbo_stream do
-        render turbo_stream: turbo_stream.replace("profile-tweets", partial: "user_nav", locals: {user: user, tweets: @tweets})
+        render turbo_stream: [
+          turbo_stream.replace("profile-tweets", partial: "user_nav", locals: {user: user, tweets: @tweets}),
+          turbo_stream.replace("profile-tweet-count", partial: "shared/profile_tweet_count", locals: {user: user, msg: @msg })]
       end
     end
   end
@@ -37,7 +41,9 @@ class UsersController < ApplicationController
     @msg = "#{@tweets.size} posts"
     respond_to do |format|
       format.turbo_stream do
-        render turbo_stream: turbo_stream.replace("profile-tweets", partial: "user_nav", locals: {user: user, tweets: @tweets})
+        render turbo_stream: [
+          turbo_stream.replace("profile-tweets", partial: "user_nav", locals: {user: user, tweets: @tweets}),
+          turbo_stream.replace("profile-tweet-count", partial: "shared/profile_tweet_count", locals: {user: user, msg: @msg })]
       end
     end
   end

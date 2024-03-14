@@ -7,8 +7,7 @@
                 </div>
             <% end %>
             <div>
-                <p class="strong-text"><%= current_user.username %></p>
-                <p class="muted-text"><%= @msg %></p>
+                <%= render partial: "shared/profile_tweet_count", locals: { user: current_user, msg: @msg } %>
             </div>
         </div>
         <div class="profile-user-info-header">

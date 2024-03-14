@@ -6,9 +6,8 @@
                     <%= image_tag "arrow-left.svg" %>
                 </div>
             <% end %>
-            <div id="profile-tweet-count">
-                <p class="strong-text"><%= @user.username %></p>
-                <p class="muted-text"><%= @msg %></p>
+            <div>
+                <%= render partial: "shared/profile_tweet_count", locals: { user: @user, msg: @msg } %>
             </div>
         </div>
         <div class="profile-user-info-header">
