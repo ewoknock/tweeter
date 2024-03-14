@@ -7,7 +7,7 @@ class FollowsController < ApplicationController
       format.html { redirect_to user_path(User.find(follow.following_user_id))}
       format.turbo_stream
     end
-    
+
   end
 
   def destroy
@@ -18,7 +18,7 @@ class FollowsController < ApplicationController
       format.html { redirect_to user_path(follow.following_user_id) }
       format.turbo_stream
     end
-    
+
   end
 
   private

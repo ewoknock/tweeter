@@ -1,3 +1,7 @@
 <%= turbo_stream.replace "follow-button" do %>
     <%= render partial: "users/follow_button", locals: { user: @user.following_users.find(params[:following_user_id]), current_user: current_user } %>
 <% end %>
+
+<%= turbo_stream.replace "profile-bio" do %>
+    <%= render partial: "profile/profile_bio", locals: { user: @user.following_users.find(params[:following_user_id]) } %>
+<% end %>

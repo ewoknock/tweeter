@@ -7,8 +7,8 @@
         <div> BIO </div>
         <div> Other links </div>
         <div class="follow-stats">
-            <div><span class="strong-text">0</span> Following</div>
-            <div><span class="strong-text">0</span> Followers</div>
+            <div><span class="strong-text"><%= user.following_count %></span> Following</div>
+            <div><span class="strong-text"><%= user.follower_count %></span> Followers</div>
         </div>
     </div>
 <% end %>
