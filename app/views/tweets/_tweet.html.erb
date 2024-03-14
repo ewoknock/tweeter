@@ -4,10 +4,10 @@
             <img src=<%= asset_path("account-outline.svg") %> alt="Profile Link Icon">  
         </div>
         <div class="tweet-body">
-            <p>
+            <%= link_to user_path(tweet_presenter.user), data: {"turbo_frame": "_top", "ignore-click": true } do %>
                 <span class="tweet-user-display-name"><%= tweet_presenter.user.display_name %></span>
                 <span class="text-user-info">@<%= tweet_presenter.user.username %> &#183; <%= tweet_presenter.created_at %></span>
-            </p>
+            <% end %>
 
             
 

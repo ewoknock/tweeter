@@ -40,11 +40,15 @@
             padding-bottom: var(--space-xs);
         }
     }
+    a{
+        color: black;
+    }
 }
 
 .tweet-body-text{
     padding-bottom: var(--space-m);
 }
+
 .tweet-user-display-name{
     font-weight: 600;
 }
