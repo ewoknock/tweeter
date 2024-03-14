@@ -1,5 +1,4 @@
 <%
-    puts "\n\n\n\n\n\n\n\n\n#{params}"
     partial_name = if params[:source] == "tweet_actions"
                      "tweets/tweet_actions"
                    else
@@ -10,9 +9,6 @@
                  else  
                     dom_id(@tweet)
                  end
-    puts "#{partial_name}"
-    puts "#{turbo_target}\n\n\n\n\n\n\n\n\n\n\n"
-
 %>
 
 

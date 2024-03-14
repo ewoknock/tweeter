@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get :profile, to: "profile#show"
   get 'profile/likes', to: "profile#likes"
   get 'profile/replies', to: "profile#replies"
+  get 'users/likes', to: "users#likes"
+  get 'users/replies', to: "users#replies"
 
 
 

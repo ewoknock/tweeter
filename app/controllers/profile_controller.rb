@@ -2,6 +2,7 @@ class ProfileController < ApplicationController
   before_action :authenticate_user!
 
   def show
+    puts current_user.username
     @tweets = tweet.map do |tweet|
       TweetPresenter.new(tweet, current_user)
     end

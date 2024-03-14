@@ -6,7 +6,7 @@
                     <%= image_tag "arrow-left.svg" %>
                 </div>
             <% end %>
-            <div>
+            <div id="profile-tweet-count">
                 <p class="strong-text"><%= @user.username %></p>
                 <p class="muted-text"><%= @msg %></p>
             </div>
@@ -16,9 +16,9 @@
             <%= render "follow_button", user: @user, current_user: current_user %>
         </div>
         <div class="profile-user-info-body">
-            <%= render "profile/profile_bio", user: @user %>
+            <%= render "profile/profile_bio",  user: @user%>
         </div>
-        <%= render "profile/profile_nav", user: @user %>
+        <%= render "user_nav", user: @user %>
     </div>
     <div class="sidebar">
         Sidebar
