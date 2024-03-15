@@ -1,0 +1,25 @@
+#modal {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: var(--space-xxxxl);
+    transform: translateX(-50%);
+    width: 400px;
+    max-width: 100%;
+    word-break: break-word;
+    border-radius: 1rem;
+    background: var(--color-primary-bg);
+}
+
+.modal-close-button{
+    font-size: var(--font-size-s);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: var(--space-xxs) var(--space-s);
+    margin: var(--space-xs);
+    transition: all .1s ease-in;
+    &:hover{
+        background-color: var(--color-white);
+        border-radius: var(--border-radius);
+    }
+}

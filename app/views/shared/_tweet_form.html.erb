@@ -1,17 +1,17 @@
 <%  placeholder_text = if source == "dashboard"
-                         "What is happening?!"
-                       else 
-                         "Post your reply"
-                       end
+                        "What is happening?!"
+                      else 
+                        "Post your reply"
+                      end
 
     button_text = if source == "dashboard"
                     "Create Tweet"
                   else 
                     "Reply"
                   end
-                   
+                  
 %>
-
+  
 <%= form_with model: Tweet.new, url: form_submit_route, class: "form" do |f| %>
     <%= f.text_area :body, placeholder: placeholder_text, class: "tweet-form" %>
     <div class="tweet-post">

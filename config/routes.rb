@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get 'users/likes', to: "users#likes"
   get 'users/replies', to: "users#replies"
 
+  get 'modal/tweet_form', to: "modal#tweet_form"
+
 
 
   resources :tweets, only: [:show, :create] do

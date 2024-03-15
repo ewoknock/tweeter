@@ -1,0 +1,6 @@
+<%= turbo_frame_tag "modal" do %>
+  <div data-controller="turbo-modal",  data-action="turbo:submit-end->turbo-modal#submitEnd">
+    <%= button_tag "X", data: { action: "turbo-modal#hideModal" }, class: "modal-close-button" %>
+    <%= render "shared/tweet_form", form_submit_route: tweets_path, source: "dashboard" %>
+  </div>
+<% end %>

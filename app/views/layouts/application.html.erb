@@ -13,6 +13,7 @@
   <body>
     <% if user_signed_in? && controller_name != "usernames" %>
       <main>
+        <%= turbo_frame_tag "modal" %>
         <%= render "shared/sidenav" %>
         <%= yield %>
       </main>

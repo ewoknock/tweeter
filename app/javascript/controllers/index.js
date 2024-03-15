@@ -7,5 +7,8 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import TurboModalController from "./turbo_modal_controller"
+application.register("turbo-modal", TurboModalController)
+
 import TweetCardController from "./tweet_card_controller"
 application.register("tweet-card", TweetCardController)
