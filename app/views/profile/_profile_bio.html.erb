@@ -4,8 +4,11 @@
         <p class="muted-text">@<%= user.username %></p>
     </div>
     <div class="user-bio">
-        <div> BIO </div>
-        <div> Other links </div>
+        <div> <%= user.bio %> </div>
+        <div> 
+            <div><%= user.location %></div>
+            <div><%= user.url %></div>
+        </div>
         <div class="follow-stats">
             <div><span class="strong-text"><%= user.following_count %></span> Following</div>
             <div><span class="strong-text"><%= user.follower_count %></span> Followers</div>

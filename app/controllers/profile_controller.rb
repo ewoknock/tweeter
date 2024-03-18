@@ -46,6 +46,14 @@ class ProfileController < ApplicationController
     end
   end
 
+  def update
+    current_user.update(profile_params[:password].blank? ? profile_params.except(:password) : profile_params)
+    respond_to do |format|
+      format.html { redirect_to profile_path }
+      format.turbo_stream
+    end
+  end
+
   private
 
   def user_replies
@@ -69,5 +77,9 @@ class ProfileController < ApplicationController
 
   def tweet
     current_user.tweets.order(created_at: :desc)
+  end
+
+  def profile_params
+    params.require(:user).permit(:username, :display_name, :email, :password, :bio, :location, :url)
   end
 end

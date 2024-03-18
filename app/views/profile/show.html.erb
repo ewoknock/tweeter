@@ -12,9 +12,11 @@
         </div>
         <div class="profile-user-info-header">
             <img src=<%= asset_path("account-outline.svg") %> alt="Profile Link Icon">  
-            <%= button_to profile_path, class: "btn btn--light" do %>
-                Edit Profile
-            <% end %>
+            <div>
+                <%= link_to modal_profile_form_path, data: {"turbo-frame": "modal"}, class: "btn btn--light" do %>
+                    Edit Profile
+                <% end %>
+            </div>
         </div>
         <div class="profile-user-info-body">
             <%= render "profile_bio", user: current_user %>

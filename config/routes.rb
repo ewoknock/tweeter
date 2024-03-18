@@ -10,12 +10,11 @@ Rails.application.routes.draw do
   get :profile, to: "profile#show"
   get 'profile/likes', to: "profile#likes"
   get 'profile/replies', to: "profile#replies"
+  put 'profile', to: "profile#update"
   get 'users/likes', to: "users#likes"
   get 'users/replies', to: "users#replies"
-
-  get 'modal/tweet_form', to: "modal#tweet_form"
-
-
+  get 'modal_tweet_form', to: "modal#tweet_form"
+  get 'modal_profile_form', to: "modal#profile_form"
 
   resources :tweets, only: [:show, :create] do
     resources :likes, only: [:create, :destroy]

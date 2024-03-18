@@ -1,0 +1,38 @@
+<%= turbo_frame_tag "modal" do %>
+  <div data-controller="turbo-modal",  data-action="turbo:submit-end->turbo-modal#submitEnd">
+    <%= button_tag "X", data: { action: "turbo-modal#hideModal" }, class: "modal-close-button form" %>
+    <%= form_with model: current_user, url: profile_path, method: :put, class: "form" do |f| %>
+        <div>
+            <%= f.label :username, class: "tweet-form" %>
+            <%= f.text_field :username, class: "form__input" %>
+        </div>
+        <div>
+            <%= f.label :display_name, class: "tweet-form" %>
+            <%= f.text_field :display_name, class: "form__input" %>
+        </div>
+            <div>
+            <%= f.label :email, class: "tweet-form" %>
+            <%= f.email_field :email, class: "form__input" %>
+        </div>
+        <div>
+            <%= f.label :password, class: "tweet-form" %>
+            <%= f.password_field :password, class: "form__input" %>
+        </div>
+        <div>
+            <%= f.label :bio, class: "tweet-form" %>
+            <%= f.text_area :bio, class: "form__input" %>
+        </div>
+        <div>
+            <%= f.label :location, class: "tweet-form" %>
+            <%= f.text_field :location, class: "form__input" %>
+        </div>
+        <div>
+            <%= f.label :url, class: "tweet-form" %>
+            <%= f.text_field :url, class: "form__input" %>
+        </div>
+        <div>
+            <%= f.submit "Update Profile", class: "btn btn--primary" %>
+        </div>
+    <% end %>
+  </div>
+<% end %>
