@@ -14,7 +14,7 @@
   
 <%= form_with model: Tweet.new, url: form_submit_route, class: "form" do |f| %>
     <%= f.text_area :body, placeholder: placeholder_text, class: "tweet-form" %>
-    <div class="tweet-post">
+    <div class="flex-end">
         <%= f.submit button_text, class: "btn btn--primary" %>
     </div>
 <% end %>

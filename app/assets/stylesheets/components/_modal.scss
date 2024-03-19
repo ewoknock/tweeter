@@ -8,7 +8,7 @@
     max-width: 100%;
     word-break: break-word;
     border-radius: 1rem;
-    background: var(--color-white);
+    background: var(--color-light);
 }
 
 .modal-close-button{
@@ -20,6 +20,7 @@
     transition: all .1s ease-in;
     &:hover{
         background-color: var(--color-white);
+
         border-radius: var(--border-radius);
     }
 }

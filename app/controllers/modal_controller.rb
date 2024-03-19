@@ -5,5 +5,6 @@ class ModalController < ApplicationController
   end
 
   def profile_form
+
   end
 end
