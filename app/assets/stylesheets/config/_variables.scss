@@ -70,3 +70,11 @@
 .rounded{
     border-radius: var(--border-radius);
 }
+
+.flex-normal{
+    display: flex;
+}
+
+.rotate-45{
+    transform: rotate(-45deg);
+}

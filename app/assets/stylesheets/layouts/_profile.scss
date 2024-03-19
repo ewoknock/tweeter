@@ -29,6 +29,21 @@
     gap: var(--space-xs);
 }
 
+.user-actions{
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+}
+
+.user-actions-element{
+    display: flex;
+    align-items: center;
+    gap: var(--space-xxs);
+    img{
+        width: var(--space-l);
+    }
+}
+
 .follow-stats{
     display: flex;
     gap: var(--space-s);

@@ -5,9 +5,15 @@
     </div>
     <div class="user-bio">
         <div> <%= user.bio %> </div>
-        <div> 
-            <div><%= user.location %></div>
-            <div><%= user.url %></div>
+        <div class="user-actions"> 
+            <div class="user-actions-element">
+                <%= image_tag("map-marker-outline.svg") unless user.location.blank? %>
+                <span class="muted-text"> <%= user.location %> </span>
+            </div>
+            <div class="user-actions-element">
+                <%= image_tag("link.svg", class: "rotate-45") unless user.url.blank? %>
+                <span class="muted-text"> <%= user.url %> </span>
+            </div>
         </div>
         <div class="follow-stats">
             <div><span class="strong-text"><%= user.following_count %></span> Following</div>
