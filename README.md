@@ -8,9 +8,9 @@ Tweeter was created using The Odin Project's criteria for building a [Social Med
 
 ## Technology used
 
-Ruby on Rails
-Hotwire - Turboframes, Turbostreams, Stimilus
-SCSS
+- Ruby on Rails
+- Hotwire - (Turbo and Stimilus)
+- SCSS
 
 ## Features
 
