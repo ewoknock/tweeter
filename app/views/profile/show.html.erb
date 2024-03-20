@@ -11,7 +11,11 @@
             </div>
         </div>
         <div class="profile-user-info-header">
-            <img src=<%= asset_path("account-outline.svg") %> alt="Profile Link Icon">  
+            <% if current_user.avatar.attached? %>
+                <%= image_tag current_user.avatar %>
+            <% else %>
+                <img src=<%= asset_path("account-outline.svg") %> alt="Profile Link Icon">  
+            <% end %>
             <div>
                 <%= link_to modal_profile_form_path, data: {"turbo-frame": "modal"}, class: "btn btn--light" do %>
                     Edit Profile

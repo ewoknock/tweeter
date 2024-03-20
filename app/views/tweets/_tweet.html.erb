@@ -1,7 +1,11 @@
 <%= turbo_frame_tag dom_id(tweet_presenter.tweet) do %>
     <article data-controller="tweet-card" data-tweet-path="<%= tweet_path(tweet_presenter.tweet) %>" class="tweet_card hover">
         <div class="tweet-avatar">
-            <img src=<%= asset_path("account-outline.svg") %> alt="Profile Link Icon">  
+            <% if tweet_presenter.user.avatar.attached? %>
+                <%= image_tag tweet_presenter.user.avatar %>
+            <% else %>
+                <img src=<%= asset_path("account-outline.svg") %> alt="Profile Link Icon">  
+            <% end %>
         </div>
         <div class="tweet-body">
             <%= link_to user_path(tweet_presenter.user), data: {"turbo_frame": "_top", "ignore-click": true } do %>
