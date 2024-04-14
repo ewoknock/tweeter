@@ -1,6 +1,6 @@
 # Tweeter
 
-A twitter clone build with Tuby on Rails.
+A twitter clone build with Ruby on Rails.
 
 ## About
 
