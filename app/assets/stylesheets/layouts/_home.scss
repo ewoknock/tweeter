@@ -1,0 +1,72 @@
+.homepage{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    align-items: center;
+}
+
+.hero-container{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--color-primary);
+}
+
+.hero-sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-xl);
+}
+
+.sidebar-item{
+    display: flex;
+    align-items: center;
+    color: var(--color-white);
+    gap: var(--space-m);
+    font-size: var(--font-size-l);
+    font-weight: 500;
+    width: 100%;
+}
+
+.homepage img{
+    width: var(--font-size-xxxxl);
+}
+
+.sidebar-item img{
+    filter: brightness(0) invert(1);
+}
+
+.sign-up-container{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.sign-up-sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-xl);
+    width: 60%;
+}
+
+.welcome,
+.join{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+}
+
+.welcome h1{
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+}
+
+.join a{
+    text-align: center;
+}
+.join p{
+    font-weight: 600;
+}
+

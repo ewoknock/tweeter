@@ -1,5 +1,36 @@
+<div class="homepage">
+    <div class="hero-container">
+        <div class="hero-sidebar">
+            <div class="sidebar-item">
+                <img src=<%= asset_path("icons8-search.svg") %>>
+                <p>Follow your interests.</p>
+            </div>
+            <div class="sidebar-item">
+                <img src=<%= asset_path("account-supervisor-outline.svg") %>>
+                <p>Hear what people are talking about.</p>
+            </div>
+            <div class="sidebar-item">
+                <img src=<%= asset_path("chat-outline.svg") %>>
+                <p>Join the conversation.</p>
+            </div>
+        </div>
+    </div>
+    <div class="sign-up-container">
+        <div class="sign-up-sidebar">
+            <div class="welcome">
+                <img src=<%= asset_path("twitter-color-icon.svg")%>>
+                <h1>See what's happening in the world right now</h1>
+            </div>
+            <div class="join">
+                <p>Join tweeter today.</p>
+                <%= link_to "Sign up", new_user_registration_path, class: 'btn btn--primary'%>
+                <%= link_to "Log in", new_user_session_path, class: 'btn btn--secondary'%>
+            </div>
+        </div>
 
-<%= link_to "Sign In", new_user_session_path %>
-<%= link_to "Create Account", new_user_registration_path %>
+    </div>
+
+</div>
+
 
 

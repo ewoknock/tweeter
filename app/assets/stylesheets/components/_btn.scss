@@ -32,14 +32,14 @@
     }
 
     &--secondary{
-        color: var(--color-white);
-        background-image: linear-gradient(to right, var(--color-secondary), var(--color-secondary-rotate));
+        color: var(--color-primary);
+        border-color: var(--color-primary);
 
         &:hover,
         &:focus,
         &:focus-within,
         &:active{
-            color: var(--color-white);
+            color: var(--color-primary-rotate);
             filter: saturate(1.2) brightness(110%);
         }
     }
