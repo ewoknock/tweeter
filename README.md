@@ -1,6 +1,6 @@
 # Tweeter
 
-A twitter clone build with Ruby on Rails.
+A twitter clone build with Ruby on Rails. [Live Preview](https://tweeter-twitterclone.fly.dev/)
 
 ## About
 
