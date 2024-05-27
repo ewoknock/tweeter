@@ -28,3 +28,9 @@ Tweeter was created using The Odin Project's criteria for building a [Social Med
 
 - Follow
     - Users can follow and un-follow other users
+ 
+## Features to add
+- Notifications
+- Image posting
+- Searching
+- Hashtags
