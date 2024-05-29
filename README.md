@@ -1,6 +1,9 @@
 # Tweeter
 
 A twitter clone build with Ruby on Rails. [Live Preview](https://tweeter-twitterclone.fly.dev/)
+Feel free to test using:
+username: tester@example.com
+password: password
 
 ## About
 
